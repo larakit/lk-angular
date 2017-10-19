@@ -3,7 +3,14 @@
     "description": "[Larakit] angular",
     "license": "MIT",
     "require":{
-        "larakit/sf-angular-larakit":"*"
+        "larakit/sf-lodash.js": "*",
+        "larakit/sf-angular-route":"*",
+        "larakit/sf-toastrjs":"*",
+        "larakit/sf-angular-resource":"*",
+        "larakit/sf-angular-hotkeys":"*",
+        "larakit/sf-angular-cookies":"*",
+        "larakit/sf-angular-sanitize":"*",
+        "larakit/sf-angular-named-route":"*"
     },
     "autoload": {
         "files": [
