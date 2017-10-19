@@ -27,7 +27,7 @@ class LkNgComponentsMiddleware {
             
         }
         $package = \Larakit\StaticFiles\Manager::package('larakit');
-        $package->js('/!/ng-larakit-js');
+        $package->js('/!/lk-angular-js');
         foreach(LkNgComponent::all() as $path) {
             $file = public_path($path . 'component.js');
             if(file_exists($file)) {

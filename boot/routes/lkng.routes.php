@@ -18,4 +18,4 @@ Route::get('!/lkng/routes', function () {
     ->middleware('web')
     ->middleware('auth')
     ->middleware('ng-larakit')
-    ->name('adminlte.routes');
+    ->name('lkng.routes');

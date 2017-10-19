@@ -96,7 +96,7 @@ class LkNgRoute {
             define('LKNG_ROUTE', true);
             $page = \Larakit\Page\LkPage::instance()
                 ->setBodyContent('<ng-view></ng-view>');
-            $page->html()->ngApp(env('LARAKIT_NG_APP', 'ng-larakit'));
+            $page->html()->ngApp(env('LARAKIT_NG_APP', 'larakit'));
             if(is_callable($callback)) {
                 $callback ($page);
             }

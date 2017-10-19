@@ -6,12 +6,15 @@
  * Date: 19.06.17
  * Time: 10:53
  */
-Route::get('!/ng-larakit-js', function () {
+Route::get('!/lk-angular-js', function () {
     $modules = \Larakit\LkNgModule::all();
     $modules = '"' . implode('", "', $modules) . '"';
     
-    return '(function () {
-    
+    return response( '(function () {
+    angular.module("larakit",[' . $modules . '])
     angular.module("larakit").constant("CSRF_TOKEN", \'' . csrf_token() . '\');
-    angular.module("ng-larakit",[' . $modules . '])})();';
+})();
+    ',200, [
+        'Content-Type'=> 'application/javascript'
+    ]) ;
 })->middleware('web');

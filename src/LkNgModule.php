@@ -17,6 +17,6 @@ class LkNgModule {
     }
     
     static function all() {
-        return array_merge(['larakit'], array_values(self::$ng_larakit_modules));
+        return array_values(self::$ng_larakit_modules);
     }
 }

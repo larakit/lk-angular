@@ -1,3 +1,4 @@
+(function () {
 angular
     .module('larakit')
     .config(['$locationProvider', '$routeProvider',
@@ -21,3 +22,4 @@ $routeProvider@endverbatim
 
         }
     ]);
+})();
