@@ -11,7 +11,6 @@
     ->usePackage('larakit/sf-angular-sanitize')
     ->usePackage('larakit/sf-angular-hotkeys')
     ->usePackage('larakit/sf-angular-cookies')
-    ->usePackage('larakit/sf-bootstrap')
     ->usePackage('larakit/sf-toastrjs')
     ->setSourceDir('public')
     ->jsPackage('lk-angular.js')

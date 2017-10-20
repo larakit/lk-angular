@@ -11,7 +11,7 @@ Route::get('!/lk-angular-js', function () {
     $modules = '"' . implode('", "', $modules) . '"';
     
     return response( '(function () {
-    angular.module("larakit",[' . $modules . '])
+    angular.module("larakit",[' . $modules . ']);
     angular.module("larakit").constant("CSRF_TOKEN", \'' . csrf_token() . '\');
 })();
     ',200, [
