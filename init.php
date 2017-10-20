@@ -25,10 +25,10 @@
 
 ;
 
-//\Larakit\LkNgModule::register('ngNamedRoute');
-//\Larakit\LkNgModule::register('ngSanitize');
-//\Larakit\LkNgModule::register('ngResource');
-//\Larakit\LkNgModule::register('ngRoute');
-//\Larakit\LkNgModule::register('ngCookies');
-//\Larakit\LkNgModule::register('cfp.hotkeys');
+\Larakit\LkNgModule::register('ngNamedRoute');
+\Larakit\LkNgModule::register('ngSanitize');
+\Larakit\LkNgModule::register('ngResource');
+\Larakit\LkNgModule::register('ngRoute');
+\Larakit\LkNgModule::register('ngCookies');
+\Larakit\LkNgModule::register('cfp.hotkeys');
 \Larakit\LkNgModule::register('lk-angular');

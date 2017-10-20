@@ -8,11 +8,16 @@
  */
 Route::get('!/lk-angular-js', function () {
     $modules = \Larakit\LkNgModule::all();
-    $modules = '"' . implode('", "', $modules) . '"';
+    $modules = "\t".'"' . implode('", '.PHP_EOL."\t".'"', $modules) . '"';
     
     return response( '(function () {
-    angular.module("larakit",[' . $modules . ']);
-    angular.module("larakit").constant("CSRF_TOKEN", \'' . csrf_token() . '\');
+angular
+    .module("larakit",[
+' . $modules . '
+    ]);
+angular
+    .module("larakit")
+    .constant("CSRF_TOKEN", \'' . csrf_token() . '\');
 })();
     ',200, [
         'Content-Type'=> 'application/javascript'
