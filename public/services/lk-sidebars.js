@@ -37,6 +37,7 @@
         }
 
         function leftToggle() {
+            console.log('sb left toggle');
             leftSet(!self.left);
         }
 

@@ -21,5 +21,20 @@ $routeProvider@endverbatim
 /* ################################################## */
 
         }
-    ]);
+    ]).run(function ($rootScope, LkSidebars) {
+$rootScope.rightToggle = function () {
+LkSidebars.rightToggle();
+return false;
+};
+$rootScope.rightValue = function () {
+return LkSidebars.rightValue();
+};
+$rootScope.leftToggle = function () {
+LkSidebars.leftToggle();
+return false;
+};
+$rootScope.leftValue = function () {
+return LkSidebars.leftValue();
+};
+});;
 })();
