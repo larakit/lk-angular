@@ -153,4 +153,8 @@ class LkNgSidebar {
         return $ret;
     }
     
+    static function all(){
+        return self::$sidebars;
+    }
+    
 }
