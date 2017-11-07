@@ -47,10 +47,10 @@
             self.events[event_name][sender] = null;
         }
 
-        function fire(event_name) {
+        function fire(event_name, params) {
             if (undefined != self.events[event_name]) {
                 _.each(self.events[event_name], function (listener) {
-                    listener.callback.call();
+                    listener.callback.call(params);
                 })
             }
         }
