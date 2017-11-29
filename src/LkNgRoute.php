@@ -97,6 +97,14 @@ class LkNgRoute {
             $page = \Larakit\Page\LkPage::instance()
                 ->setBodyContent('<ng-view></ng-view>');
             $page->html()->ngApp(env('LARAKIT_NG_APP', 'larakit'));
+            $page->body()
+                ->setAttribute('style', 'height: auto; min-height: 100%;')
+                ->addClass('skin-black')->setAttribute('ng-class', '{
+        \'sidebar-collapse\':leftValue(),
+        \'control-sidebar-open\':rightValue(),
+        \'sidebar-open\':!leftValue(),
+        \'control-sidebar-open\':rightValue(),
+}');
             if(is_callable($callback)) {
                 $callback ($page);
             }
