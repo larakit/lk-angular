@@ -89,7 +89,7 @@ class LkNgRoute {
         if($is_auth) {
             $middlewares[] = 'auth';
         }
-    
+        
         return \Route::get($url, function () use ($callback) {
             \Config::set('larakit.lk-staticfiles.js.external.build', false);
             \Config::set('larakit.lk-staticfiles.js.external.min', false);
@@ -97,6 +97,10 @@ class LkNgRoute {
             $page = \Larakit\Page\LkPage::instance()
                 ->setBodyContent('<ng-view></ng-view>');
             $page->html()->ngApp(env('LARAKIT_NG_APP', 'larakit'));
+            $viewport = env('LARAKIT_NG_VIEWPORT');
+            if($viewport) {
+                $page->setHeadViewport($viewport);
+            }
             $page->body()
                 ->setAttribute('style', 'height: auto; min-height: 100%;')
                 ->addClass('skin-black')->setAttribute('ng-class', '{
