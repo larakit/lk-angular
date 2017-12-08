@@ -17,6 +17,7 @@
     ->jsPackage('services/breadcrumbs-builder.js')
     ->jsPackage('services/lk-hasher.js')
     ->jsPackage('services/lk-list.js')
+    ->jsPackage('services/lk-array.js')
     ->jsPackage('services/lk-alerts.js')
     ->jsPackage('services/lk-page.js')
     ->jsPackage('services/lk-event.js')
