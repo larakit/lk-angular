@@ -83,6 +83,12 @@ class LkNgRoute {
         return json_encode($this->data, JSON_PRETTY_PRINT);
     }
     
+    protected static $body_content = '<ng-view></ng-view>';
+    
+    static function setBody($val) {
+        self::$body_content = $val;
+    }
+    
     static function proxy($url, $is_auth = true, $callback = null) {
         $middlewares   = ['web'];
         $middlewares[] = 'ng-larakit';
@@ -95,7 +101,7 @@ class LkNgRoute {
             \Config::set('larakit.lk-staticfiles.js.external.min', false);
             define('LKNG_ROUTE', true);
             $page = \Larakit\Page\LkPage::instance()
-                ->setBodyContent('<ng-view></ng-view>');
+                ->setBodyContent(self::$body_content);
             $page->html()->ngApp(env('LARAKIT_NG_APP', 'larakit'));
             $viewport = env('LARAKIT_NG_VIEWPORT');
             if($viewport) {
