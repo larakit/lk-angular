@@ -4,9 +4,9 @@
         .module('lk-angular')
         .factory('BreadCrumbs', Factory);
 
-    Factory.$inject = ['$route', 'namedRouteService'];
+    Factory.$inject = ['$route', 'namedRouteService', '$filter'];
 
-    function Factory($route, namedRouteService) {
+    function Factory($route, namedRouteService, $filter) {
         var self = this, page_routes = [];
         return {
             clear: clear,
@@ -52,7 +52,8 @@
                 icon: route.icon
             };
             page_routes.push(item);
-            $('title').html(title);
+            // console.log(title, $filter('translate')(title));
+            $('title').html($filter('translate')(title));
             return item;
         }
     }

@@ -13,6 +13,7 @@ angular
                 .preferredLanguage('{{$locale}}')
                 .fallbackLanguage('{{$locale}}');
             $translateProvider.useCookieStorage();
+            $translateProvider.useSanitizeValueStrategy(null);
 
             $routeProvider
                 .otherwise('{{$otherwise}}');
