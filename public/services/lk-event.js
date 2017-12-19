@@ -25,7 +25,7 @@
         }
 
         function subscribe(event_name, sender, callback) {
-            console.log('subscribe', event_name, sender);
+            // console.log('subscribe', event_name, sender);
             if (!has(event_name, sender)) {
                 if (undefined == self.events[event_name]) {
                     self.events[event_name] = [];
@@ -38,7 +38,7 @@
         }
 
         function unsubscribe(event_name, sender) {
-            console.log('unsubscribe', event_name, sender);
+            // console.log('unsubscribe', event_name, sender);
             if (has(event_name, sender)) {
                 _.remove(self.events[event_name], function (listener) {
                     return listener.sender == sender;
@@ -50,7 +50,7 @@
         function fire(event_name, params) {
             if (undefined != self.events[event_name]) {
                 _.each(self.events[event_name], function (listener) {
-                    listener.callback.call(params);
+                    listener.callback.call(self, params);
                 })
             }
         }

@@ -150,7 +150,9 @@
             }
             var modalInstance = $uibModal.open(config);
             modalInstance.result.then(function (o) {
-                callback.call(null);
+                // console.warn('modalInstance.result',arguments);
+                // console.warn('modalInstance.result2',o);
+                callback.call(modalInstance, o);
             }, function () {
                 // console.info('modal-component dismissed at: ' + new Date());
             });
