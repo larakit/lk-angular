@@ -6,6 +6,7 @@
         "larakit/sf-lodash.js": "*",
         "larakit/sf-angular-route":"*",
         "larakit/sf-toastrjs":"*",
+        "larakit/sf-angular-translate": "*",
         "larakit/sf-angular-resource":"*",
         "larakit/sf-angular-hotkeys":"*",
         "larakit/sf-angular-cookies":"*",

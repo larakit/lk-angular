@@ -2,6 +2,7 @@
 \Larakit\Boot::register_boot(__DIR__ . '/boot');
 \Larakit\Boot::register_middleware_route('ng-larakit', \Larakit\LkNgComponentsMiddleware::class);
 \Larakit\Boot::register_view_path(__DIR__ . '/views', 'ng-larakit');
+\Larakit\Boot::register_command(\Larakit\CommandNgTranslate::class);
 
 \Larakit\StaticFiles\Manager::package('larakit/lk-angular')
     ->usePackage('larakit/sf-lodash.js')
@@ -22,9 +23,7 @@
     ->jsPackage('services/lk-page.js')
     ->jsPackage('services/lk-event.js')
     ->jsPackage('services/lk-sidebars.js')
-    ->jsPackage('services/lk-user.js')
-
-;
+    ->jsPackage('services/lk-user.js');
 
 \Larakit\LkNgModule::register('ngNamedRoute');
 \Larakit\LkNgModule::register('ngSanitize');

@@ -1,9 +1,19 @@
 (function () {
 angular
     .module('larakit')
-    .config(['$locationProvider', '$routeProvider',
-        function config($locationProvider, $routeProvider) {
+    .config(['$locationProvider', '$routeProvider', '$translateProvider',
+        function config($locationProvider, $routeProvider, $translateProvider) {
             $locationProvider.html5Mode(true);
+
+            $translateProvider.useStaticFilesLoader({
+                prefix: '/!/locales/',
+                suffix: '.json'
+            });
+            $translateProvider
+                .preferredLanguage('{{$locale}}')
+                .fallbackLanguage('{{$locale}}');
+            $translateProvider.useCookieStorage();
+
             $routeProvider
                 .otherwise('{{$otherwise}}');
 
