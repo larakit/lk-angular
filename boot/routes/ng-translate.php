@@ -8,11 +8,15 @@
  */
 if(config('app.debug')) {
     Route::get('!/locales/{lang}.json', function () {
-        $lang  = Request::route('lang');
-        $files = rglob('*php', 0, resource_path('lang/' . $lang));
+        $ret           = [];
+        $lang          = Request::route('lang');
+        $files         = rglob('*php', 0, resource_path('lang/' . $lang));
+        $resource_path = resource_path('lang/' . $lang);
+        $resource_path = str_replace('\\', '/', $resource_path);
         foreach($files as $file) {
+            
             $file = str_replace('\\', '/', $file);
-            $file = str_replace(resource_path('lang/' . $lang), '', $file);
+            $file = str_replace($resource_path, '', $file);
             $file = str_replace('.php', '', $file);
             $file = trim($file, '/');
             $file = str_replace('/', '.', $file);
