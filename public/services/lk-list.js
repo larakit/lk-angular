@@ -14,6 +14,7 @@
             ids: ids,
             config: config,
             actionRemove: actionRemove,
+            actionRestore: actionRestore,
             isLoading: getLoading,
             actionLoad: actionLoad,
             actionEdit: actionEdit
@@ -111,7 +112,7 @@
             });
         }
 
-        function actionRemove(model, $ctrl, confirm_message, url) {
+        function actionRemove(model, $ctrl, confirm_message, url, callback) {
             if (undefined == url) {
                 url = $ctrl.url_delete;
             }
@@ -121,11 +122,35 @@
                             larakit_toastr(response.data);
                             if ('success' == response.data.result) {
                                 actionLoad($ctrl);
+                                if (callback) {
+                                    callback.call($ctrl);
+                                }
                             }
                         }
                     );
             }
 
+        }
+
+        function actionRestore(model, $ctrl, confirm_message, url, callback) {
+            if (undefined == url) {
+                url = $ctrl.url_restore;
+            }
+            if (url) {
+                if (confirm(confirm_message)) {
+                    $http.post(url, model)
+                        .then(function (response) {
+                                larakit_toastr(response.data);
+                                if ('success' == response.data.result) {
+                                    actionLoad($ctrl);
+                                    if (callback) {
+                                        callback.call($ctrl);
+                                    }
+                                }
+                            }
+                        );
+                }
+            }
         }
 
         function actionEdit(model, componentForm, callback, size, is_modal) {
