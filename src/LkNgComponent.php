@@ -26,12 +26,10 @@ class LkNgComponent {
      * @param null $path
      */
     static function register($name, $components_directory = null) {
-        if(!isset(self::$components[$name])) {
             if(!$components_directory) {
                 $components_directory = '/!/ng/components/';
             }
             self::$components[$name] = trim($components_directory, '/') . '/' . $name . '/';
-        }
     }
     
 }
