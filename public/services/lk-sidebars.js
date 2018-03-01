@@ -47,7 +47,7 @@
         }
 
         function rightValue() {
-            return self.right;
+            return !self.right;
         }
 
         function rightToggle() {

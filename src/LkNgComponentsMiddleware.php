@@ -9,6 +9,7 @@
 namespace Larakit;
 
 class LkNgComponentsMiddleware {
+    
     /**
      * Handle an incoming request.
      *
@@ -39,7 +40,7 @@ class LkNgComponentsMiddleware {
             }
         }
         //        dump(__FILE__);
-        $package->js('/!/lkng/routes');
+        $package->js('/!/lkng/routes', null, -1);
         
         return $next($request);
     }
