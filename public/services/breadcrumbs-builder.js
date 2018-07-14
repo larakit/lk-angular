@@ -42,13 +42,16 @@
                 title = title.replace('{{' + k + '}}', v);
             });
             subtitle = route.subtitle;
+            if (undefined == subtitle) {
+                subtitle = '';
+            }
             _.each(replaces, function (v, k) {
                 subtitle = subtitle.replace('{{' + k + '}}', v);
             });
             item = {
                 title: title,
                 subtitle: subtitle,
-                url: route.url,
+                url: url,
                 icon: route.icon
             };
             page_routes.push(item);

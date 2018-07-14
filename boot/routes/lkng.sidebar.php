@@ -9,7 +9,7 @@
 Route::get('!/lkng/sidebar', function () {
     \Larakit\Event\Event::notify('lkng::init');
     $ret = \Larakit\LkNgSidebar::sidebars();
-    
+
     //    dd($ret);
     
     return $ret;
